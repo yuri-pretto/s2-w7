@@ -15,7 +15,6 @@ public class WildlifeSimulatorRunner {
     public static void main(String[] args) throws IOException {
         // Create simulator with capacity for 20 species
         WildlifeSimulator simulator = new WildlifeSimulator(20);
-        
         // Load species data from CSV
         File f = new File("species-data.csv");
         Scanner s = new Scanner(f);
@@ -23,16 +22,15 @@ public class WildlifeSimulatorRunner {
         while(s.hasNextLine()){
             String line = s.nextLine();
             String[] pieces = line.split(",");
+            System.out.println(pieces);
             String name = pieces[0];
             int pop = Integer.parseInt(pieces[1]);
-            double birthRate = Double.parseDouble(pieces[2]);
-            double deathRate = Double.parseDouble(pieces[3]);
+            double birthrate = Double.parseDouble(pieces[2]);
+            double deathrate = Double.parseDouble(pieces[3]);
             int capacity = Integer.parseInt(pieces[4]);
             String location = pieces[5];
-            Species temp = new Species(name, pop, birthRate, deathRate, capacity, location);
+            Species temp = new Species(name, pop, birthrate, deathrate, capacity, location);
             simulator.addSpecies(temp);
-            System.out.println(line);
-
         }
 
         

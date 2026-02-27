@@ -25,6 +25,9 @@ public class WildlifeSimulator {
      */
     public void simulateYear() {
         //TODO
+        for(int i = 0; i < speciesCount; i++){
+            species[i].simulateYear();
+        }
     }
     
     /**
@@ -32,6 +35,9 @@ public class WildlifeSimulator {
      */
     public void simulate(int years) {
         //TODO
+        for(int i = 0; i < years; i++){
+            simulateYear();
+        }
     }
     
     /**
@@ -39,7 +45,7 @@ public class WildlifeSimulator {
      */
     public Species getSpecies(int index) {
         //TODO
-        return null;
+        return species[index];
     }
     
     /**
@@ -58,12 +64,24 @@ public class WildlifeSimulator {
         return m;
     }
     
+    public String toString(){
+        String m = "";
+        for(Species s: species){
+            if(s != null);
+                m += s.toString() + "/n";
+        }
+        return m;
+    }
     /**
      * Get total wildlife count across all species
      */
     public double getTotalPopulation() {
         //TODO
-        return 0.0;
+        int x = 0;
+        for(int i = 0; i < speciesCount; i++){
+            x+=species[i].getPopulation();
+        }
+        return x;
     }
     
     /**
@@ -71,6 +89,10 @@ public class WildlifeSimulator {
      */
     public int getMostPopulousIndex() {
         //TODO
+        int maxPopIndex = 0;
+        for(int i = 1; i <this.speciesCount; i++){
+            if(this.species[maxPopIndex])
+        }
         return -1;
     }
     
